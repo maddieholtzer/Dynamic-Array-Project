@@ -8,16 +8,22 @@
 
 require_relative 'ring_buffer'
 
-class QueueWithMax
+class QueueWithMax < RingBuffer
+
   attr_accessor :store
 
   def initialize
+    super()
+    @max = 0
   end
 
   def enqueue(val)
+    push(val)
+
   end
 
   def dequeue
+    shift()
   end
 
   def max
