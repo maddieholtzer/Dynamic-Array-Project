@@ -46,6 +46,7 @@ class RingBuffer
   # O(1) ammortized
   def unshift(val)
     @store.unshift(val)
+    @store[0] = @store[0]
     @length+=1
   end
 
